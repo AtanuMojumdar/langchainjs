@@ -51,7 +51,7 @@ const conversationalRetrievalChain = RunnableSequence.from([
     RunnablePassthrough.assign({ // history + question + standalone_question
         standalone_question: rephraseQuestionChain
     }),
-    RunnablePassthrough.assign({ // history + question + standalone_question
+    RunnablePassthrough.assign({ // history + question + standalone_question + context
         context: docRetrievalChain
     }),
     answerGenerationChainPrompt,
